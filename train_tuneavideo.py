@@ -261,7 +261,7 @@ def main(
                 video_length = pixel_values.shape[1]
                 mask_p = random.random()
                 mask_values = pixel_values
-                if mask_p>0.6:
+                if mask_p>0.4:
                     #原始图片
                     mask_values = pixel_values
                 else:
