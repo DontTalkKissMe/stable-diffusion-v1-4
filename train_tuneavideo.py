@@ -6,6 +6,7 @@ import math
 import os
 from typing import Dict, Optional, Tuple
 from omegaconf import OmegaConf
+import random
 
 import torch
 import torch.nn.functional as F
@@ -258,8 +259,17 @@ def main(
                 # Convert videos to latent space
                 pixel_values = batch["pixel_values"].to(weight_dtype)
                 video_length = pixel_values.shape[1]
+                mask_p = random.random()
+                mask_values = pixel_values
+                if mask_p>0.6:
+                    #原始图片
+                    mask_values = pixel_values
+                else:
+                    mask_img = int(random.random()*video_length)
+                    mask_values[0][mask_img][:][:][:] = 0
                 pixel_values = rearrange(pixel_values, "b f c h w -> (b f) c h w")
-                latents = vae.encode(pixel_values).latent_dist.sample()
+                mask_values = rearrange(mask_values, "b f c h w -> (b f) c h w")
+                latents = vae.encode(mask_values).latent_dist.sample()
                 latents = rearrange(latents, "(b f) c h w -> b c f h w", f=video_length)
                 latents = latents * 0.18215
 
