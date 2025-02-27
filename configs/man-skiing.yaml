@@ -3,7 +3,7 @@ output_dir: "./outputs/man-skiing"
 
 train_data:
   video_path: "data/man-skiing.mp4"
-  prompt: "a man is skiing"
+  prompt: "A snowboarder in a yellow jacket and goggles riding on fresh snow, with a clear blue sky and distant trees in the background. The snowboarder is smoothly navigating the slope, leaving tracks in the powder."
   n_sample_frames: 24
   width: 512
   height: 512
@@ -26,9 +26,9 @@ validation_data:
 
 learning_rate: 3e-5
 train_batch_size: 1
-max_train_steps: 500
+max_train_steps: 1000
 checkpointing_steps: 1000
-validation_steps: 100
+validation_steps: 200
 trainable_modules:
   - "attn1.to_q"
   - "attn2.to_q"
