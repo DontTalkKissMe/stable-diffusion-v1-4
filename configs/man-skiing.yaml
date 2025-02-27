@@ -19,10 +19,10 @@ validation_data:
   video_length: 24
   width: 512
   height: 512
-  num_inference_steps: 50
+  num_inference_steps: 120
   guidance_scale: 12.5
   use_inv_latent: True
-  num_inv_steps: 50
+  num_inv_steps: 120
 
 learning_rate: 3e-5
 train_batch_size: 1
