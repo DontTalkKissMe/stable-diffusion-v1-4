@@ -13,9 +13,9 @@ train_data:
 validation_data:
   prompts:
     - "Iron Man in his red and gold armor, with a glowing arc reactor on his chest and a helmet, gliding over fresh snow. The background features a clear blue sky and distant trees, while Iron Man smoothly navigates the slope, leaving a trail in the powder."
-    - "mickey mouse is skiing on the snow"
-    - "spider man is skiing on the beach, cartoon style"
-    - "wonder woman, wearing a cowboy hat, is skiing"
+    - "mickey mouse is riding on fresh snow, with a clear blue sky and distant trees in the background. The snowboarder is smoothly navigating the slope, leaving tracks in the powder."
+    - "spider man is  riding on fresh snow, with a clear blue sky and distant trees in the background. The snowboarder is smoothly navigating the slope, leaving tracks in the powder, cartoon style"
+    - "wonder woman, wearing a cowboy hat, is riding on fresh snow, with a clear blue sky and distant trees in the background. The snowboarder is smoothly navigating the slope, leaving tracks in the powder."
     - "a man, wearing pink clothes, gliding over fresh snow at sunset. The background features distant trees, while Iron Man smoothly navigates the slope, leaving a trail in the powder."
   video_length: 24
   width: 512
