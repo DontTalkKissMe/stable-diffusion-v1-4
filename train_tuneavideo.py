@@ -261,10 +261,15 @@ def main(
                 video_length = pixel_values.shape[1]
                 mask_p = random.random()
                 mask_values = pixel_values
-                if mask_p>0.3:
+                if mask_p<0.3:
                     #原始图片
                     mask_values = pixel_values
+                elif mask_p<0.85:
+                    mask_img = int(random.random()*video_length)
+                    mask_values[0][mask_img][:][:][:] = 0
                 else:
+                    mask_img = int(random.random()*video_length)
+                    mask_values[0][mask_img][:][:][:] = 0
                     mask_img = int(random.random()*video_length)
                     mask_values[0][mask_img][:][:][:] = 0
                 pixel_values = rearrange(pixel_values, "b f c h w -> (b f) c h w")
